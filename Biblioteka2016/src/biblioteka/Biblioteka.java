@@ -5,10 +5,12 @@ import java.util.LinkedList;
 import biblioteka.interfejs.BibliotekaInterfejs;
 
 public class Biblioteka implements BibliotekaInterfejs {
+	//Lista knjiga u biblioteci
 	private LinkedList<Knjiga> knjige = new LinkedList<Knjiga>();
 	
 	@Override
 	public void dodajKnjigu(Knjiga knjiga) {
+		// Ne sme biti duplikata knjiga
 		if(knjiga == null || knjige.contains(knjiga))
 			throw new RuntimeException("Greska pri unosu knnjige");
 		knjige.add(knjiga);
